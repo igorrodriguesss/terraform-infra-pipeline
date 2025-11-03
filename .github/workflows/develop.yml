@@ -9,14 +9,12 @@ permissions:
   id-token: write
   contents: read
 
-jobs: 
-  terraform: 
-  uses: ./github/workflows/terraform.yml
-  with: 
-    environment: "dev"
-    assume-role-arn: arn:aws:iam::829115578807:role/github-actions-igorrodriguesss
-    aws_region: "us-east-1"
-    aws-statefile-s3-bucket: igorrodriguesss-us-east-1-terraform-statefile
-    aw-lock-dynamodb-table: igorrodriguesss-us-east-1-terraform-lock
-
-
+jobs:
+  call-terraform:
+    uses: igorrodriguesss/terraform-infra-pipeline/.github/workflows/terraform.yml@main
+    with:
+      environment: "dev"
+      aws-assume-role-arn: arn:aws:iam::829115578807:role/github-actions-igorrodriguesss
+      aws-region: "us-east-1"
+      aws-statefile-s3-bucket: igorrodriguesss-us-east-1-terraform-statefile
+      aws-lock-dynamodb-table: igorrodriguesss-us-east-1-terraform-lock
