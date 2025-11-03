@@ -66,4 +66,5 @@ jobs:
         id: terraform-apply
         run: |
           terraform -chdir=infra workspace select -or-create ${{ inputs.environment }} || terraform -chdir=infra workspace new ${{ inputs.environment }}
-          terraform -chdir=infra plan -var-file="./envs/${{ inputs.environment }}/terraform.tfvars" -out="${{ inputs.environment }}.plan"
+          terraform -chdir=infra plan -var-file="../envs/${{ inputs.environment }}/terraform.tfvars" -out="${{ inputs.environment }}.plan"
+
