@@ -4,20 +4,20 @@ on:
   workflow_call: 
     inputs:
       environment:
-        required: true
         type: string
+        required: true
       aws-assume-role-arn:
-        required: true
         type: string
+        required: true
       aws-statefile-s3-bucket:
-        required: true
         type: string
+        required: true
       aws-lock-dynamodb-table:
-        required: true
         type: string
+        required: true
       aws-region:
-        required: true
         type: string
+        required: true  
 
 jobs:
   terraform:
