@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  call-terraform:
-    uses: ./.github/workflows/terraform.yml
+    terraform:
+    uses: ./github/workflows/terraform.yml
     with:
       environment: "dev"
       aws-assume-role-arn: arn:aws:iam::829115578807:role/github-actions-igorrodriguesss
