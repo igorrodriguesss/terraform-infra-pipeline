@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   call-terraform:
-    uses: igorrodriguesss/terraform-infra-pipeline/.github/workflows/terraform.yml@main
+    uses: uses: ./.github/workflows/terraform.yml
     with:
       environment: "dev"
       aws-assume-role-arn: arn:aws:iam::829115578807:role/github-actions-igorrodriguesss
